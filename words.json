@@ -1,0 +1,38 @@
+{
+    "Berufe": [
+        "Arzt", "Ingenieur", "Lehrer", "Manager", "Polizist", "Krankenschwester", "Bauarbeiter", 
+        "Schauspieler", "Verkäufer", "Rechtsanwalt", "Koch", "Erzieher", "Architekt", "Journalist", 
+        "Informatiker"
+    ],
+    "Länder": [
+        "Afghanistan", "Albanien", "Algerien", "Argentinien", "Australien", "Bangladesch", 
+        "Belgien", "Bolivien", "Brasilien", "Bulgarien", "Uruguay", "Kanada", "China", "Kroatien", 
+        "Kuba", "Zypern", "Tschechien", "Dänemark", "Deutschland", "Ägypten", "Estland", "Äthiopien", 
+        "Finnland", "Frankreich", "Griechenland", "Ungarn", "Island", "Österreich", "Israel"
+    ],
+    "Orte im Haus" : [
+        "Wohnzimmer", "Küche", "Schlafzimmer", "Bad", "Gästezimmer", "Arbeitszimmer", "Flur", 
+        "Balkon", "Garage", "Garten", "Keller", "Dachboden", "Abstellraum", "Waschküche", 
+        "Treppe", "Fenster", "Tür", "Pool"
+    ],
+    "Sehenswürdigkeiten" : [
+        "Pyramide", "Taj Mahal", "Kolosseum in Rom", "Chinesische Mauer",  "Niagarafälle", 
+        "Schiefe Turm von Pisa", "Freiheitsstatue", "Mount Everest", "Great Barrier Reef", 
+        "Eiffelturm", "Big Ben", "Central Park", "Zugspitze"
+    ],
+    "Transport" : [
+        "Auto", "Bus", "Zug", "Flugzeug", "Fahrrad", "Straßenbahn", "Motorrad", "Schiff", "Kanu", 
+        "Segelboot", "Surfbrett", "Skateboard", "Inlineskates", "Schlitten", "Snowboard", "Ski", 
+        "Helikopter", "Heißluft-Ballon", "Einrad", "E-Bike", "E-Scooter"
+    ],
+    "Sport" : [
+        "Fußball", "Basketball", "Tennis", "Volleyball", "Schwimmen", "Laufen", "Boxen", "Golf", 
+        "Eishockey", "Handball", "Wrestling", "Klettern", "Surfen", "Segeln", "Marathon", 
+        "American Football", "Dart", "Billard", "Tischtennis", "Schach"
+    ],
+    "Einrichtung" : [
+        "Schule", "Universität", "Krankenhaus", "Bibliothek", "Feuerwehr", "Gefängnis", "Museum", 
+        "Theater", "Kino", "Fitnessstudio", "Einkaufszentrum", "Supermarkt", "Bank", "Postamt", 
+        "Tankstelle", "Hotel", "Restaurant", "Schwimmbäd", "Sauna", "Flughafen", "Bahnhof"
+    ]
+}
