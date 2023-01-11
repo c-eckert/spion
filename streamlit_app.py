@@ -76,8 +76,8 @@ def main():
 
     st.title('Spion - das Spiel')
 
-    player_count = st.slider('Wie viele Spieler nehmen teil?', min_value=2, max_value=10, value=2, disabled=st.session_state["disabled"])
-    spy_count = st.slider('Wie viele Spione gibt es?', min_value=1, max_value=player_count, value=1, disabled=st.session_state["disabled"])
+    player_count = st.number_input('Wie viele Spieler nehmen teil?', min_value=3, max_value=100, value=8, disabled=st.session_state["disabled"])
+    spy_count = st.number_input('Wie viele Spione gibt es?', min_value=1, max_value=player_count, value=3, disabled=st.session_state["disabled"])
     categories = st.multiselect('Wählen Sie die Kategorien von Wörtern aus', options=WORDS.keys(), default=WORDS.keys(), disabled=st.session_state["disabled"])
 
     if st.session_state['gamestate'] == 'ready':
