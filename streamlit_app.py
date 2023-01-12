@@ -34,12 +34,10 @@ def cb_hide():
 def cb_start():
     st.session_state['state_assignment'] = "hidden"
     st.session_state['state_global'] = "assign"
-    st.session_state['disabled'] = True
     st.session_state['current_player'] = 1
     st.session_state['word_list'] = generate_wordlist(st.session_state['categories'], st.session_state['player_count'], st.session_state['spy_count'])
 
 def cb_new_game():
-    st.session_state['disabled'] = False
     st.session_state['state_global'] = "config"
 
 
@@ -62,32 +60,25 @@ def main():
 
     if 'categories' not in st.session_state:
         st.session_state['categories'] = []
-    
-    if 'disabled' not in st.session_state:
-        st.session_state['disabled'] = False
 
     if 'word_list' not in st.session_state:
         st.session_state['word_list'] = []
 
     st.title('Spion - das Spiel')
 
-    player_count = st.number_input('Wie viele Spieler nehmen teil?', min_value=3, max_value=100, value=8, disabled=st.session_state["disabled"])
-    spy_count = st.number_input('Wie viele Spione gibt es?', min_value=1, max_value=player_count, value=3, disabled=st.session_state["disabled"])
-    categories = st.multiselect('Wählen Sie die Kategorien von Wörtern aus', options=get_words().keys(), default=get_words().keys(), disabled=st.session_state["disabled"])
-
     if st.session_state['state_global'] == 'config':
-        st.session_state['player_count'] = player_count
-        st.session_state['spy_count'] = spy_count
-        st.session_state['categories'] = categories
+        st.session_state['player_count'] = st.number_input('Wie viele Spieler nehmen teil?', min_value=3, max_value=100, value=8)
+        st.session_state['spy_count'] = st.number_input('Wie viele Spione gibt es?', min_value=1, max_value=st.session_state['player_count'], value=3)
+        st.session_state['categories'] = st.multiselect('Wählen Sie die Kategorien von Wörtern aus', options=get_words().keys(), default=get_words().keys())
+
         with st.sidebar:
             st.json(get_words())
 
         st.button('Spiel starten', on_click=cb_start)
 
     elif st.session_state['state_global'] == "assign":
-        st.button('Neues Spiel', on_click=cb_new_game)
-        st.header("Rollenzuteilung")
-        st.subheader(f"Spieler {st.session_state['current_player']} von {st.session_state['player_count']}")
+        st.button('Neues Spiel beginnen', on_click=cb_new_game)
+        st.header(f"Rollenzuteilung - Spieler {st.session_state['current_player']} von {st.session_state['player_count']}")
 
         if st.session_state['state_assignment'] == "hidden":
             st.info("Klicke auf 'aufdecken' um dein Wort zu sehen.")
@@ -99,10 +90,10 @@ def main():
                 st.error(word)
             else:
                 st.success(word)
-            st.button("zudecken", on_click=cb_hide)
+            st.button("zudecken und weitergeben", on_click=cb_hide)
         
     elif st.session_state['state_global'] == "done":
-        st.success(f"Das Spiel kann los gehen! Es gibt {spy_count} Spione und {player_count} Spieler.")
+        st.success(f"Das Spiel kann los gehen! Es gibt {st.session_state['spy_count']} Spione und {st.session_state['player_count']} Spieler.")
         st.button('Neues Spiel', on_click=cb_new_game)
 
 
