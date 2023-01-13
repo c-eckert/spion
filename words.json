@@ -34,5 +34,11 @@
         "Schule", "Universität", "Krankenhaus", "Bibliothek", "Feuerwehr", "Gefängnis", "Museum", 
         "Theater", "Kino", "Fitnessstudio", "Einkaufszentrum", "Supermarkt", "Bank", "Postamt", 
         "Tankstelle", "Hotel", "Restaurant", "Schwimmbad", "Sauna", "Flughafen", "Bahnhof"
+    ],
+    "Babtisten" : [
+        "Schleierabnahme", "Kopfbedeckung", "Jugendtreff", "Jugendfest", "Rüstwochenende", "Siegwinden",
+        "Mandoline", "Bruderrat", "Jugendstunde", "Jugendfreizeit", "Gebetswoche", "Mitarbeiterkreis (MAK)",
+        "Gemeindeleiter", "Jugendleiter", "Kinderstunde", "Erntedankfest", "Straßeneinsatz", 
+        "Elternverabschiedung", "Gemeindestunde"
     ]
 }
