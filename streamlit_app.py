@@ -71,6 +71,7 @@ st.title('Spion - das Spiel')
 if st.session_state['state_global'] == 'config':
     with st.sidebar:
         st.json(get_words())
+    st.caption("Jetzt mit Babtisten-Kategorie!!")
     with st.expander("Spielregeln"):
         st.markdown("""
         ### Ziel
