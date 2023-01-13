@@ -41,6 +41,13 @@ def cb_start():
 def cb_new_game():
     st.session_state['state_global'] = "config"
 
+st.set_page_config(
+    page_title="Spion", 
+    page_icon="🕵️", 
+    layout="centered", 
+    initial_sidebar_state="collapsed"
+)
+
 # initialize session_states
 if 'state_global' not in st.session_state:
     st.session_state['state_global'] = "config" # config --> assign --> done
@@ -60,31 +67,32 @@ if 'spy_count' not in st.session_state:
 if 'word_list' not in st.session_state:
     st.session_state['word_list'] = []
 
-st.set_page_config(
-    page_title="Spion", 
-    page_icon=":male-detective:", 
-    layout="centered", 
-    initial_sidebar_state="collapsed"
-)
-st.title('Spion - das Spiel')
+st.title('Spion - das Spiel 🕵️')
 
 if st.session_state['state_global'] == 'config':
     with st.sidebar:
         st.json(get_words())
-    st.caption("Jetzt mit Babtisten-Kategorie!!")
+    st.info("Jetzt mit Babtisten-Kategorie!!")
     with st.expander("Spielregeln"):
         st.markdown("""
-        ### Ziel
+        ### 🏁 Ziel
         **Spion** ist ein Partyspiel ab 3 Personen. Im Spiel geht es um ein bestimmtes Wort, welches einigen Spielern bekannt und anderen unbekannt ist. Diese 2 Gruppen von Spielern spielen gegeneinander.
         Die **Spione**, die das Ziel haben, das *Wort* herauszufinden. Die **anderen** haben das Ziel, die **Spione** zu identifizieren. 
-        ### Vorbereitung
+
+        ### ⚙️ Vorbereitung
         Vor Beginn des Spiels wird ein Handy reihum gegeben, wodurch jeder Spieler seine Rolle zugewiesen bekommnt und das Wort festgelegt wird. 
-        Dazu drückt der Spieler einmal auf 'aufdecken', merkt sich das Wort und die Rolle. Danach drückt er auf 'zudecken' und gibt das Handy weiter.
-        ### Spiel
+        1. ``aufdecken`` drücken 
+        2. Wort merken oder Rolle merken, wenn "Spion"
+        3. ``zudecken`` drücken
+        4. Handy weitergeben
+
+        ### 🧐 Spiel
         Danach können sich alle Spieler gegenseitig Fragen zu dem Wort stellen, um die Rolle oder das Wort herauszufinden. 
         Jeder Spion hat *eine* Möglichkeit das Wort zu erraten. Alternativ kann eine Abstimmung durchgeführt werden, in welcher alle Spione gleichzeitig bestimmt werden. Liegt die Gruppe falsch, haben die Spione gewonnen.
-        ### Spielende
-        Das Spiel endet, wenn das Wort durch einen Spion erraten wurde oder wenn alle Spione in *einer* Abstimmung erraten wurden.""")
+
+        ### 🥳 Spielende
+        Das Spiel endet, wenn das Wort durch einen Spion erraten wurde oder wenn alle Spione in *einer* Abstimmung erraten wurden.
+        """)
 
     col1, col2 = st.columns(2)
     with col1:
