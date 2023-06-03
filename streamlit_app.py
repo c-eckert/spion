@@ -123,7 +123,3 @@ elif st.session_state['state_global'] == "done":
     st.success(f"Das Spiel kann los gehen! Es gibt {st.session_state['spy_count']} Spione und {st.session_state['player_count']} Spieler.")
     st.button('Neues Spiel', on_click=cb_new_game)
     st.balloons()
-
-st.markdown("""
-<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5yq0h1zdo5r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
-""")
