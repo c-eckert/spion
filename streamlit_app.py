@@ -2,7 +2,7 @@ import random
 import streamlit as st
 import json
 
-@st.experimental_singleton
+@st.cache_data
 def get_words():
     with open('words.json') as file:
         return json.load(file)
